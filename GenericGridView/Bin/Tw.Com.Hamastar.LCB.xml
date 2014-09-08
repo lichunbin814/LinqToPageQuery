@@ -1,0 +1,251 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tw.Com.Hamastar.LCB</name>
+    </assembly>
+    <members>
+        <member name="T:Tw.Com.Hamastar.LCB.BLL.EnumMethod">
+            <summary>
+            Enum的方法
+            </summary>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LCB.BLL.EnumMethod.GetDescription``1(``0)">
+            <summary>
+            取得Enum的Description內容
+            </summary>
+            <typeparam name="TEnum">Enum宣告型別</typeparam>
+            <param name="EnumValue">Enum的值</param>
+            <returns>Enum值的Description內容</returns>
+        </member>
+        <member name="T:Tw.Com.Hamastar.LCB.BLL.SqlColumnType">
+            <summary>
+            要檢查是否溢位的SQL資料型態
+            </summary>
+        </member>
+        <member name="T:Tw.Com.Hamastar.LCB.BLL.AvoidSqlColumnOverFlow`1">
+            <summary>
+            將可能導致SQL溢位的資料，全部以預設值取代
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LCB.BLL.AvoidSqlColumnOverFlow`1.#ctor(`0)">
+            <summary>
+            將可能導致SQL溢位的資料，全部以預設值取代
+            </summary>
+            <param name="DataBaseTable">要檢查的資料</param>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LCB.BLL.AvoidSqlColumnOverFlow`1.CheckDbValue(Tw.Com.Hamastar.LCB.BLL.SqlColumnType[])">
+            <summary>
+            依照傳入要檢查的資料型態，逐一將會導致SQL溢位的資料，轉換為預設值
+            </summary>
+            <param name="ConvertSqlTypes">要檢查的資料型態</param>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LCB.BLL.AvoidSqlColumnOverFlow`1.GetConvertMethod(Tw.Com.Hamastar.LCB.BLL.SqlColumnType)">
+            <summary>
+            由要轉換的型態取得「避免SQL資料溢位的Method」
+            </summary>
+            <param name="CovType">要轉換的型態</param>
+            <returns>避免SQL資料溢位的Method</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LCB.BLL.AvoidSqlColumnOverFlow`1.CheckSqlMinDateTime(System.Reflection.PropertyInfo)">
+            <summary>
+            避免傳入小於 1/1/1753 12:00:00 AM的時間造成SqlDateTime 溢位
+            </summary>
+            <param name="ProInfo">要檢查的資料欄位</param>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LCB.BLL.ConvertMethod.ToDataTableMethod.GetPropType(System.Reflection.PropertyInfo)">
+            <summary>
+            取得Property的型別
+            </summary>
+            <param name="SourceProperty">Property來源</param>
+            <returns>若為可Null型別</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LCB.BLL.ConvertMethod.ToDataTableMethod.ToDataTable``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            將實作IEnumerable的介面轉為DataTable
+            </summary>
+            <typeparam name="TSource">IEnumerable型別</typeparam>
+            <param name="EnumerableData">要轉換的IEnumerable資料</param>
+            <returns>由IEnumerable轉換而成的DataTable</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LCB.BLL.DataExport.NpoiExcel.#ctor(System.String)">
+            <summary>
+            初使化NpoiExcel
+            </summary>
+            <param name="FileName">EXCEL檔案名稱</param>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LCB.BLL.DataExport.NpoiExcel.DownloadExcel``1(System.Collections.Generic.IList{``0},System.String[],System.String)">
+            <summary>
+            將泛型List轉成Npoi的Excel，並送出下載的Response
+            </summary>
+            <typeparam name="T">IList泛型型別</typeparam>
+            <param name="lstExcelData">要匯入的IList</param>
+            <param name="FileName">省略此參數，將使用Response的方式提供給使用者下載，若要存至本機，才需要給予儲存路徑</param>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LCB.BLL.DataExport.NpoiExcel.DownloadExcel(System.Web.UI.WebControls.Table,System.String)">
+            <summary>
+            將HtmlTable轉成Npoi的Excel，並送出下載的Response
+            </summary>
+            <param name="tb">要轉成Excel的HtmlTable</param>
+            <param name="SavePath">省略此參數，將使用Response的方式提供給使用者下載，若要存至本機，才需要給予儲存路徑</param>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LCB.BLL.DataExport.NpoiExcel.SaveOrDownloadExcel(System.String,NPOI.HSSF.UserModel.HSSFWorkbook,System.String)">
+            <summary>
+            將Excel儲存至硬碟或使用Resposne給予使用者下載
+            </summary>
+            <param name="FileName">檔案名稱</param>
+            <param name="WorkBook">要轉成Excel的工作表</param>
+            <param name="SavePath">儲存至硬碟的路徑(非必要)</param>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LCB.BLL.DataExport.NpoiExcel.HtmlTableToWorkbook(System.Web.UI.WebControls.Table)">
+            <summary>
+            HtmlTable轉為Npoi的Excel工作表
+            </summary>
+            <param name="tb">Table控制項</param>
+            <returns>Npoi的Excel工作表</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LCB.BLL.DataExport.NpoiExcel.SaveExcel(System.String,NPOI.HSSF.UserModel.HSSFWorkbook)">
+            <summary>
+            將WorkBook存成Excel並放置於本機
+            </summary>
+            <param name="SavePath">儲存的路徑</param>
+            <param name="WorkBook">工作表</param>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LCB.BLL.DataExport.NpoiExcel.FileNmaeExtention(System.String)">
+            <summary>
+            將副檔名補上xls或xlsx
+            </summary>
+            <param name="FileName">檔名名稱</param>
+            <returns></returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LCB.BLL.DataExport.NpoiExcel.DownloadExcel(System.Collections.Generic.List{System.String[]},System.String[],System.String)">
+            <summary>
+            將string[]型別的IList物件匯出成Excel，讓Client端下載
+            </summary>
+            <param name="Gv">要匯出的dynamic型別的IList物件</param>
+            <param name="SelectColumn">Key:Property名稱,Value:要轉換的中文名稱</param>
+            <param name="FileName">省略此參數，將使用Response的方式提供給使用者下載，若要存至本機，才需要給予儲存路徑</param>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LCB.BLL.DataExport.NpoiExcel.DownloadExcel(System.Web.UI.WebControls.GridView,System.String)">
+            <summary>
+            將GridView匯出成Excel，讓Client端下載
+            </summary>
+            <param name="Gv">要匯出的GridView</param>
+            <param name="FileName">省略此參數，將使用Response的方式提供給使用者下載，若要存至本機，才需要給予儲存路徑</param>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LCB.BLL.DataExport.NpoiExcel.IListToWorkbook(System.Collections.Generic.List{System.String[]},System.String[])">
+            <summary>
+            將IList物件，轉為Npoi的Excel工作表
+            </summary>
+            <param name="List">資料來源</param>    
+            <returns>Npoi的Excel工作表</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LCB.BLL.DataExport.NpoiExcel.GridViewToWorkbook(System.Web.UI.WebControls.GridView)">
+            <summary>
+            匯出欄位Visable是True的GridView資料
+            </summary>
+            <param name="gv">要匯出的GridView</param>
+            <returns>Npoi的Excel工作表</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LCB.BLL.DataExport.NpoiExcel.DownloadExcel(System.String,NPOI.HSSF.UserModel.HSSFWorkbook)">
+            <summary>
+            檔案名稱
+            </summary>
+            <param name="FileName">要輸出的檔案名稱</param>
+            <param name="workbook">要輸出的WorkBook</param>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LCB.BLL.DataExport.NpoiExcel.SetUrlEncode(System.String)">
+            <summary>
+            依照不同瀏覽器，將匯出的檔案名稱做編碼
+            </summary>
+            <param name="FileName">檔案名稱</param>
+            <returns>處理過後的檔案名稱</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LCB.BLL.DataExport.NpoiExcel.CreateContinuousCell(NPOI.SS.UserModel.IRow,System.Int32,System.Int32,System.String[])">
+            <summary>
+            建立連續的儲存格
+            </summary>
+            <param name="ExcelRow">要建立儲存格的資料列</param>
+            <param name="CellsNum">要建立的儲存格總數量</param>
+            <param name="StratIndex">建立起始位置</param>
+            <param name="Value">每一個儲存格的內容</param>
+            <returns>存放新儲存格的資料列</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LCB.BLL.DataExport.NpoiExcel.CreateBottomRow(NPOI.SS.UserModel.ISheet)">
+            <summary>
+            在工作表的最後一列建立新的一列
+            </summary>
+            <param name="Sheet">工作表</param>
+            <returns>建立的新資料列</returns>
+        </member>
+        <member name="P:Tw.Com.Hamastar.LCB.BLL.DataExport.NpoiExcel.FileName">
+            <summary>
+            檔案名稱
+            </summary>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LCB.BLL.DirectoryMethod.CheckDirectory(System.String,System.String)">
+            <summary>
+            確認資料夾有被建立,並回傳路徑
+            </summary>
+            <param name="Path"></param>
+            <param name="Name"></param>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LCB.BLL.Generic.List.ToStringArray``1(System.Collections.Generic.IList{``0})">
+            <summary>
+            將IList內的資料轉型為string[]
+            </summary>
+            <param name="lst">List資料</param>
+            <returns></returns>
+        </member>
+        <member name="F:Tw.Com.Hamastar.LCB.BLL.DateTimeMethod.CalWeekRule">
+            <summary>
+            定義決定年份的第一週的各種規則 (Rule)
+            </summary>
+        </member>
+        <member name="F:Tw.Com.Hamastar.LCB.BLL.DateTimeMethod.firstDayOfWeek">
+            <summary>
+            System.DayOfWeek 值，表示週的第一天。
+            </summary>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LCB.BLL.DateTimeMethod.#ctor(System.Globalization.CalendarWeekRule,System.DayOfWeek)">
+            <summary>
+            設定"定義第一週的規則"及"週的第一天"
+            </summary>
+            <param name="CalWeekRule">定義決定年份的第一週的各種規則 (Rule)</param>
+            <param name="firstDayOfWeek">System.DayOfWeek 值，表示週的第一天。</param>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LCB.BLL.DateTimeMethod.GetWeekOfYear(System.DateTime)">
+            <summary>
+            取得日期的週數
+            </summary>
+            <param name="Time">要計算的日期</param>
+            <returns>週數</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LCB.BLL.DateTimeMethod.TWDateTimeTryParse(System.String,System.String,System.DateTime@)">
+            <summary>
+            使用zh-tw的文化特性將日期轉型
+            </summary>
+            <param name="DateStr">字串，含有要轉換的日期和時間</param>
+            <param name="Format">日期格式(例:yyyyMMdd)</param>
+            <param name="ConvertDt">存放轉型後的DateTime物件</param>
+            <returns>是否轉型成功</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LCB.BLL.DateTimeMethod.DiffMonth(System.DateTime,System.DateTime)">
+            <summary>
+            兩個日期差距的月份
+            </summary>
+            <param name="StartDate">計算的起始日期</param>
+            <param name="EndDate">計算的結束日期</param>
+            <returns>差距的月份</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LCB.BLL.Text.HTMLMethod.ReplaceTag(System.String,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            移除字串中的HTMLTag
+            </summary>
+            <param name="HTMLTag">移除HTML標籤</param>
+            <param name="space">移除空白字元</param>
+            <param name="wrap">移除換行、Tab</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GenericSelect</name>
+    </assembly>
+    <members>
+        <member name="T:GenericSelect.AbsGridViewMehtod`2">
+            <summary>
+            GridView查詢所用的抽像方法
+            </summary>
+            <typeparam name="T">由ORM將資料表轉換的Class</typeparam>
+            <typeparam name="S">實作IDisposeable的Context類型</typeparam>
+        </member>
+        <member name="M:GenericSelect.AbsGridViewMehtod`2.DynamicSort(System.Linq.IQueryable{`0},System.String)">
+            <summary>
+            依照ObjectDataSource的SortExpression排序
+            </summary>
+            <param name="query">要轉為SQL的Query</param>
+            <param name="SortExpression">要排序的欄位</param>
+            <returns>加入OrderBy的Query</returns>
+        </member>
+        <member name="M:GenericSelect.AbsGridViewMehtod`2.GetDataCount(System.Linq.IQueryable{`0})">
+            <summary>
+            取得資料總筆數(分頁用)
+            </summary>
+            <param name="query">要轉為SQL的Query</param>
+            <returns>資料總筆數</returns>
+        </member>
+        <member name="M:GenericSelect.AbsGridViewMehtod`2.GetList(System.Linq.IQueryable{`0},System.Int32,System.Int32,System.String)">
+            <summary>
+            取得排序且分頁的資料
+            </summary>
+            <param name="query">要轉為SQL的Query</param>
+            <param name="StartIndex">起始位置</param>
+            <param name="PageSize">要取得的資料筆數</param>
+            <param name="SortExpression">排序的欄位</param>
+            <returns>經過排序且分頁的資料</returns>
+        </member>
+        <member name="M:GenericSelect.AbsGridViewMehtod`2.GetPagerCommand(System.Linq.IQueryable{`0},System.Int32,System.Int32)">
+            <summary>
+            取得分頁的查詢Query
+            </summary>
+            <param name="query">要加入分頁的Query</param>
+            <param name="StartIndex">起始位置</param>
+            <param name="PageSize">>要取得的資料筆數</param>
+            <returns>加上分頁的Query</returns>
+        </member>
+        <member name="M:GenericSelect.AbsGridViewMehtod`2.GetPrimaryKey(System.Linq.IQueryable{`0})">
+            <summary>
+            取得主鍵名稱
+            </summary>
+            <param name="query">查詢的query</param>
+            <returns>若無主鍵，則預設回傳第一個欄位</returns>
+        </member>
+        <member name="M:GenericSelect.AbsGridViewMehtod`2.CheckSortExpression(System.Linq.IQueryable{`0},System.String)">
+            <summary>
+            取得排序Query(若為空值，預設使用主鍵由大至小排序)
+            </summary>
+            <param name="query">要加入排序的Query</param>
+            <param name="SortExpression">排序的語法</param>
+            <returns>加上排序的Query</returns>
+        </member>
+        <member name="P:GenericSelect.AbsGridViewMehtod`2.Context">
+            <summary>
+            Context容器
+            </summary>
+        </member>
+    </members>
+</doc>

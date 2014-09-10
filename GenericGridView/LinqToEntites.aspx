@@ -13,9 +13,9 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
+        <div>　
             <a href="Default.aspx">返回清單頁 .Net3.5</a>
-     
+     　
             <h1>EntityFrameWork(使用QueryAble)</h1>
             <cc1:DataPagerGridView runat="server" DataSourceID="ObjectDataSource2" AllowPaging="True" AllowSorting="True" ID="Gv2"></cc1:DataPagerGridView>
             <uc1:DataPager runat="server" ID="DataPager1" PagedControlID="Gv2" />

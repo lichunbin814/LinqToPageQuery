@@ -14,9 +14,9 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
+    <div>　
         <a href="Default.aspx">返回清單頁 .Net3.5</a>
-        <H1>LinqToSQL</H1>
+        <H1>LinqToSQL</H1>　
         <cc1:DataPagerGridView runat="server" AutoGenerateColumns="True" DataSourceID="ObjectDataSource1" id="Gv1" AllowPaging="True" AllowSorting="True" EnableTheming="True">            
 <PagerSettings Visible="False"></PagerSettings>
         </cc1:DataPagerGridView>

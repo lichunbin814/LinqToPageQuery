@@ -32,4 +32,24 @@ public partial class LinqToEntites : System.Web.UI.Page
     {
         e.InputParameters["FilterData"] = Customer;
     }
+    protected void ObjectDataSource1_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
+    {
+
+    }
+    private LinqToEntitySample.DAL.CustomersFilter _customerFilter;
+    public LinqToEntitySample.DAL.CustomersFilter customerFilter
+    {
+        get
+        {
+            return _customerFilter == null ?
+            _customerFilter = new LinqToEntitySample.DAL.CustomersFilter { StartPostalCode = 10000, EndStartPostalCode = 50500 }
+            : _customerFilter;
+        }
+        set { _customerFilter = value; }
+    }
+
+    protected void ObjectDataSource3_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
+    {
+        e.InputParameters["FilterData"] = customerFilter;
+    }
 }

@@ -29,8 +29,26 @@ public partial class LinqToSql : System.Web.UI.Page
     }
 
 
-    protected void ObjectDataSource1_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
+    protected void ObjectDataSource2_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
     {
         e.InputParameters["FilterData"] = Customer;
+    }
+
+    private CustomersFilter _customerFilter;
+
+    public CustomersFilter customerFilter
+    {
+        get { 
+            return _customerFilter == null ? 
+            _customerFilter = new CustomersFilter { StartPostalCode = 10000, EndStartPostalCode = 50500 } 
+            : _customerFilter; 
+        }
+        set { _customerFilter = value; }
+    }
+    
+
+    protected void ObjectDataSource3_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
+    {
+        e.InputParameters["FilterData"] = customerFilter;
     }
 }

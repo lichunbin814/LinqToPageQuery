@@ -81,14 +81,23 @@ public partial class DataPager : System.Web.UI.UserControl
                 break;
             case "Next":
                 int newIndex = e.Item.Pager.StartRowIndex + e.Item.Pager.PageSize;
-                if (newIndex <= e.TotalRowCount)
+                if (newIndex < e.TotalRowCount)
                 {
+                    //避免超出資料總數
                     e.NewStartRowIndex = newIndex;
                     e.NewMaximumRows = e.Item.Pager.MaximumRows;
                 }
                 break;
             case "Last":
-                e.NewStartRowIndex = Convert.ToInt32(Math.Round(Convert.ToDouble(e.TotalRowCount / e.Item.Pager.PageSize), MidpointRounding.ToEven) * e.Item.Pager.PageSize);
+                if (e.TotalRowCount % e.Item.Pager.MaximumRows == 0)
+                {
+                    //避免起始索引，超過資料總數
+                    e.NewStartRowIndex = e.TotalRowCount - e.Item.Pager.MaximumRows;
+                }
+                else
+                {
+                    e.NewStartRowIndex = Convert.ToInt32(Math.Round(Convert.ToDouble(e.TotalRowCount / e.Item.Pager.PageSize), MidpointRounding.ToEven) * e.Item.Pager.PageSize);
+                }                
                 e.NewMaximumRows = e.Item.Pager.MaximumRows;
                 break;
             //case "DropDownList":

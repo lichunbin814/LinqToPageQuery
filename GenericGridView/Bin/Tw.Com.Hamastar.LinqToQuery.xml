@@ -1,0 +1,610 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tw.Com.Hamastar.LinqToQuery</name>
+    </assembly>
+    <members>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.IDataMapping.GetPrimaryKey(System.Reflection.PropertyInfo[])">
+            <summary>
+            取得主鍵名稱
+            </summary>
+            <param name="ProInfos">所有的屬性</param>
+            <returns>主鍵名稱</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.DataMappingMethod.GetPrimaryKey(System.Reflection.PropertyInfo[])">
+            <summary>
+            取得主鍵名稱
+            </summary>
+            <param name="ProInfos">所有的屬性</param>
+            <returns>主鍵名稱</returns>
+        </member>
+        <member name="T:Tw.Com.Hamastar.LinqToQuery.ContextMethod`1">
+            <summary>
+            Context(ORM)的方法
+            </summary>
+            <typeparam name="TContext">Context資料型別</typeparam>
+        </member>
+        <member name="T:Tw.Com.Hamastar.LinqToQuery.IContext`1">
+            <summary>
+            將Context型別轉換為Class
+            </summary>
+            <typeparam name="TContext">Conetxt(ORM)的型別</typeparam>  
+        </member>
+        <member name="P:Tw.Com.Hamastar.LinqToQuery.IContext`1.Context">
+            <summary>
+            Context容器
+            </summary>
+        </member>
+        <member name="P:Tw.Com.Hamastar.LinqToQuery.ContextMethod`1.Context">
+            <summary>
+            Context容器
+            </summary>
+        </member>
+        <member name="T:Tw.Com.Hamastar.LinqToQuery.ContextToQueryMethod`2">
+            <summary>
+            籍由Context(ORM)取得特定資料表類別(ORM)的Query
+            </summary>
+            <typeparam name="TContext">Conetxt(ORM)的型別</typeparam>
+            <typeparam name="TSource">要轉換的Query資料表類別(ORM)</typeparam>
+        </member>
+        <member name="T:Tw.Com.Hamastar.LinqToQuery.IContextToQuery`2">
+            <summary>
+            籍由Context(ORM)取得特定資料表類別(ORM)的Query
+            </summary>
+            <typeparam name="TContext">Conetxt(ORM)的型別</typeparam>
+            <typeparam name="TSource">要轉換的Query資料表類別(ORM)</typeparam>
+        </member>
+        <member name="P:Tw.Com.Hamastar.LinqToQuery.IContextToQuery`2.query">
+            <summary>
+            由Context轉換後的Query
+            </summary>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.ContextToQueryMethod`2.GenerateQuery(`0)">
+            <summary>
+            依照傳入的Conetxt類型回傳特定的資料表類別Query
+            </summary>
+            <param name="Context">Context(ORM)的類別</param>
+            <returns>Context預設回傳的資料表Query</returns>
+        </member>
+        <member name="P:Tw.Com.Hamastar.LinqToQuery.ContextToQueryMethod`2.query">
+            <summary>
+            由Context轉換後的Query
+            </summary>
+        </member>
+        <member name="T:Tw.Com.Hamastar.LinqToQuery.GetPageListMethod.GetPageListMethod`2">
+            <summary>
+            取得分頁和排序資料的基礎方法
+            </summary>
+            <typeparam name="TSource">要查詢的Query、Where條件、輸出List的資料類型</typeparam>
+            <typeparam name="TContext">Conetxt的資料類型</typeparam>
+        </member>
+        <member name="T:Tw.Com.Hamastar.LinqToQuery.IDataSourceSelect`1">
+            <summary>
+            DataSource的查詢資料方法
+            </summary>
+            <typeparam name="TSource">資料表類別(ORM)</typeparam>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.IDataSourceSelect`1.GetData(`0,System.Int32,System.Int32,System.String)">
+            <summary>
+            取得排序且分頁的資料
+            </summary>
+            <param name="FilterData">要篩選資料的條件</param>
+            <param name="startRowIndex">起始位置</param>
+            <param name="maximumRows">要取得的資料筆數</param>
+            <param name="SortExpression">排序的欄位</param>
+            <returns>經過排序且分頁的資料</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.IDataSourceSelect`1.GetData(System.Int32,System.Int32,System.String)">
+            <summary>
+            取得排序且分頁的資料
+            </summary>
+            <param name="startRowIndex">起始位置</param>
+            <param name="maximumRows">要取得的資料筆數</param>
+            <param name="SortExpression">排序的欄位</param>
+            <returns>經過排序且分頁的資料</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.IDataSourceSelect`1.GetDataCount(`0)">
+            <summary>
+            取得資料總筆數(分頁用)
+            </summary>
+            <param name="FilterData">要篩選資料的條件</param>
+            <returns>資料總筆數</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.IDataSourceSelect`1.GetDataCount">
+            <summary>
+            取得資料總筆數(分頁用)
+            </summary>
+            <returns>資料總筆數</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.GetPageListMethod.GetPageListMethod`2.GetData(`0,System.Int32,System.Int32,System.String)">
+            <summary>
+            取得排序且分頁的資料
+            </summary>
+            <param name="FilterData">要篩選資料的條件</param>
+            <param name="startRowIndex">起始位置</param>
+            <param name="maximumRows">要取得的資料筆數</param>
+            <param name="SortExpression">排序的欄位</param>
+            <returns>經過排序且分頁的資料</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.GetPageListMethod.GetPageListMethod`2.GetData(System.Int32,System.Int32,System.String)">
+            <summary>
+            取得排序且分頁的資料
+            </summary>
+            <param name="startRowIndex">起始位置</param>
+            <param name="maximumRows">要取得的資料筆數</param>
+            <param name="SortExpression">排序的欄位</param>
+            <returns>經過排序且分頁的資料</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.GetPageListMethod.GetPageListMethod`2.GetDataCount(`0)">
+            <summary>
+            取得資料總筆數(分頁用)
+            </summary>
+            <param name="FilterData">要篩選資料的條件</param>
+            <returns>資料總筆數</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.GetPageListMethod.GetPageListMethod`2.GetDataCount">
+            <summary>
+            取得資料總筆數(分頁用)
+            </summary>
+            <returns>資料總筆數</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.GetPageListMethod.GetPageListMethod`2.GetCustomQuery(`0,System.Linq.IQueryable{`0})">
+            <summary>
+            取得自訂的Query
+            </summary>
+            <param name="FilterData">要篩選資料的條件</param>
+            <param name="query">查詢的Query</param>
+            <returns>篩選Where的Query</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.GetPageListMethod.GetPageListMethod`2.GetFilterQuery``2(``0,System.Linq.IQueryable{``1},System.Func{``0,System.Linq.IQueryable{``1},System.Linq.IQueryable{``1}})">
+            <summary>
+            將Query實作Where條件
+            </summary>
+            <typeparam name="TFilter">要篩選資料的資料表類別(ORM)</typeparam>
+            <typeparam name="TQuery">查詢的Query資料表類別(ORM)</typeparam>
+            <param name="FilterData">要篩選資料的條件</param>
+            <param name="Query">查詢的Query</param>
+            <param name="FilterMethod">實作Where條件的方法</param>
+            <returns>實作Where條件的Query</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.GetPageListMethod.GetPageListMethod`2.GetPagerAndOrderList``1(System.Linq.IQueryable{``0},System.Int32,System.Int32,System.String)">
+            <summary>
+            取得分頁及排序的List資料
+            </summary>
+            <typeparam name="TQuery">要轉換為List的Query資料表類別(ORM)</typeparam>
+            <param name="Query">要轉換為List的Query</param>
+            <param name="startRowIndex">分頁的起始資料列索引</param>
+            <param name="maximumRows">分頁要取得的資料列數目</param>
+            <param name="SortExpression">要排序的資料欄位</param>
+            <returns>實作分頁及排序後的List</returns>
+        </member>
+        <member name="T:Tw.Com.Hamastar.LinqToQuery.GetPageListMethod.GetPageListMethod`3">
+            <summary>
+            取得分頁和排序資料的共用方法
+            </summary>
+            <typeparam name="TSource">要查詢的Query及Where條件的資料類型</typeparam>
+            <typeparam name="TContext">Conetxt的資料類型</typeparam>
+            <typeparam name="TOutPut">回傳List的資料類型</typeparam>
+        </member>
+        <member name="T:Tw.Com.Hamastar.LinqToQuery.IDataSourceSelect`2">
+            <summary>
+            DataSource的查詢資料方法
+            </summary>
+            <typeparam name="TSource">資料表類別(ORM)</typeparam>
+            <typeparam name="TOutPut">輸出的資料表類別(ORM)</typeparam>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.IDataSourceSelect`2.GetData(`0,System.Int32,System.Int32,System.String)">
+            <summary>
+            取得排序且分頁的資料
+            </summary>
+            <param name="FilterData">要篩選資料的條件</param>
+            <param name="startRowIndex">起始位置</param>
+            <param name="maximumRows">要取得的資料筆數</param>
+            <param name="SortExpression">排序的欄位</param>
+            <returns>經過排序且分頁的資料</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.IDataSourceSelect`2.GetData(System.Int32,System.Int32,System.String)">
+            <summary>
+            取得排序且分頁的資料
+            </summary>
+            <param name="startRowIndex">起始位置</param>
+            <param name="maximumRows">要取得的資料筆數</param>
+            <param name="SortExpression">排序的欄位</param>
+            <returns>經過排序且分頁的資料</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.IDataSourceSelect`2.GetDataCount(`0)">
+            <summary>
+            取得資料總筆數(分頁用)
+            </summary>
+            <param name="FilterData">要篩選資料的條件</param>
+            <returns>資料總筆數</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.IDataSourceSelect`2.GetDataCount">
+            <summary>
+            取得資料總筆數(分頁用)
+            </summary>
+            <returns>資料總筆數</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.GetPageListMethod.GetPageListMethod`3.GetDataCount(`0)">
+            <summary>
+            取得資料總筆數(分頁用)
+            </summary>
+            <param name="FilterData">要篩選資料的條件</param>
+            <returns>資料總筆數</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.GetPageListMethod.GetPageListMethod`3.GetDataCount">
+            <summary>
+            取得資料總筆數(分頁用)
+            </summary>
+            <returns>資料總筆數</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.GetPageListMethod.GetPageListMethod`3.GetData(`0,System.Int32,System.Int32,System.String)">
+            <summary>
+            取得排序且分頁的資料
+            </summary>
+            <param name="FilterData">要篩選資料的條件</param>
+            <param name="startRowIndex">起始位置</param>
+            <param name="maximumRows">要取得的資料筆數</param>
+            <param name="SortExpression">排序的欄位</param>
+            <returns>經過排序且分頁的資料</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.GetPageListMethod.GetPageListMethod`3.GetData(System.Int32,System.Int32,System.String)">
+            <summary>
+            取得排序且分頁的資料
+            </summary>
+            <param name="startRowIndex">起始位置</param>
+            <param name="maximumRows">要取得的資料筆數</param>
+            <param name="SortExpression">排序的欄位</param>
+            <returns>經過排序且分頁的資料</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.GetPageListMethod.GetPageListMethod`3.GetCustomQuery(`0,System.Linq.IQueryable{`0})">
+            <summary>
+            取得自訂的Query
+            </summary>
+            <param name="FilterData">要篩選資料的條件</param>
+            <param name="query">查詢的Query</param>
+            <returns>篩選Select及Where的Query</returns>
+        </member>
+        <member name="T:Tw.Com.Hamastar.LinqToQuery.OperateDataBase.IOperateDataBase`1">
+            <summary>
+            操作資料庫會使用到的方法
+            </summary>
+            <typeparam name="TSource">ORM產生的資料表類別</typeparam>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.OperateDataBase.IOperateDataBase`1.Get``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+            <summary>
+            取得篩選資料的Query
+            </summary>
+            <typeparam name="TValue">篩選的欄位</typeparam>
+            <param name="Predicate">篩選的條件</param>
+            <returns>篩選資料的Query</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.OperateDataBase.IOperateDataBase`1.Get">
+            <summary>
+            取得全部資料的Query
+            </summary>
+            <returns>查詢全部資料的Query</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.OperateDataBase.IOperateDataBase`1.Insert(`0)">
+            <summary>
+            新增資料，並取得新增後的SN
+            </summary>
+            <param name="InsertObject">要新增的資料</param>
+            <returns>新增後的SN</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.OperateDataBase.IOperateDataBase`1.Update(`0)">
+            <summary>
+            修改資料
+            </summary>
+            <param name="UpdateObjcet">要修改的資料</param>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.OperateDataBase.IOperateDataBase`1.Delete(`0)">
+            <summary>
+            刪除資料
+            </summary>
+            <param name="DelteObjcet">要刪除的資料</param>
+        </member>
+        <member name="T:Tw.Com.Hamastar.LinqToQuery.LinqFilterData`2">
+            <summary>
+            取得分頁和排序的資料
+            </summary>
+            <typeparam name="TSource">要查詢的Query、Where條件、輸出List的資料類型</typeparam>
+            <typeparam name="TContext">Conetxt的資料類型</typeparam>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.LinqFilterData`2.GetDataCount(`0)">
+            <summary>
+            取得資料總筆數(分頁用)
+            </summary>
+            <param name="FilterData">要篩選資料的條件</param>
+            <returns>資料總筆數</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.LinqFilterData`2.GetDataCount">
+            <summary>
+            取得資料總筆數(分頁用)
+            </summary>
+            <returns>資料總筆數</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.LinqFilterData`2.GetData(`0,System.Int32,System.Int32,System.String)">
+            <summary>
+            取得排序且分頁的資料
+            </summary>
+            <param name="FilterData">要篩選資料的條件</param>
+            <param name="startRowIndex">起始位置</param>
+            <param name="maximumRows">要取得的資料筆數</param>
+            <param name="SortExpression">排序的欄位</param>
+            <returns>經過排序且分頁的資料</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.LinqFilterData`2.GetData(System.Int32,System.Int32,System.String)">
+            <summary>
+            取得排序且分頁的資料
+            </summary>
+            <param name="startRowIndex">起始位置</param>
+            <param name="maximumRows">要取得的資料筆數</param>
+            <param name="SortExpression">排序的欄位</param>
+            <returns>經過排序且分頁的資料</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.LinqFilterData`2.LinqWhere(`0,System.Linq.IQueryable{`0})">
+            <summary>
+            自訂的Where篩選方式
+            </summary>
+            <param name="FilterData">要篩選資料的條件</param>
+            <param name="query">查詢的Query</param>
+            <returns></returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.LinqFilterData`2.LinqSelect(System.Linq.IQueryable{`0})">
+            <summary>
+            自訂Select的語法
+            </summary>
+            <param name="query">待修改的Query</param>
+            <returns>自訂的Select語法</returns>
+        </member>
+        <member name="T:Tw.Com.Hamastar.LinqToQuery.LinqFilterData`3">
+            <summary>
+            取得分頁和排序的資料
+            </summary>
+            <typeparam name="TSource">要查詢的Query及Where條件的資料類型</typeparam>
+            <typeparam name="TContext">Conetxt的資料類型</typeparam>
+            <typeparam name="TOutPut">回傳List的資料類型</typeparam>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.LinqFilterData`3.GetDataCount(`0)">
+            <summary>
+            取得資料總筆數(分頁用)
+            </summary>
+            <param name="FilterData">要篩選資料的條件</param>
+            <returns>資料總筆數</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.LinqFilterData`3.GetDataCount">
+            <summary>
+            取得資料總筆數(分頁用)
+            </summary>
+            <returns>資料總筆數</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.LinqFilterData`3.GetData(`0,System.Int32,System.Int32,System.String)">
+            <summary>
+            取得排序且分頁的資料
+            </summary>
+            <param name="FilterData">要篩選資料的條件</param>
+            <param name="startRowIndex">起始位置</param>
+            <param name="maximumRows">要取得的資料筆數</param>
+            <param name="SortExpression">排序的欄位</param>
+            <returns>經過排序且分頁的資料</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.LinqFilterData`3.GetData(System.Int32,System.Int32,System.String)">
+            <summary>
+            取得排序且分頁的資料
+            </summary>
+            <param name="startRowIndex">起始位置</param>
+            <param name="maximumRows">要取得的資料筆數</param>
+            <param name="SortExpression">排序的欄位</param>
+            <returns>經過排序且分頁的資料</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.LinqFilterData`3.LinqWhere(`0,System.Linq.IQueryable{`0})">
+            <summary>
+            自訂的Where篩選方式
+            </summary>
+            <param name="FilterData">要篩選資料的條件</param>
+            <param name="query">查詢的Query</param>
+            <returns>實作Where的Query</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.LinqFilterData`3.LinqSelect(System.Linq.IQueryable{`0})">
+            <summary>
+            自訂Select的語法
+            </summary>
+            <param name="query">待修改的Query</param>
+            <returns>自訂的Select語法</returns>
+        </member>
+        <member name="T:Tw.Com.Hamastar.LinqToQuery.LinqFilterData`4">
+            <summary>
+            取得分頁和排序的資料
+            </summary>
+            <typeparam name="TSource">要查詢的Query資料類型</typeparam>
+            <typeparam name="TFilter">Where條件的資料類型</typeparam>
+            <typeparam name="TContext">Conetxt的資料類型</typeparam>
+            <typeparam name="TOutPut">回傳List的資料類型</typeparam>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.LinqFilterData`4.GetDataCount(`1)">
+            <summary>
+            取得資料總筆數(分頁用)
+            </summary>
+            <param name="FilterData">要篩選資料的條件</param>
+            <returns>資料總筆數</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.LinqFilterData`4.GetDataCount">
+            <summary>
+            取得資料總筆數(分頁用)
+            </summary>
+            <returns>資料總筆數</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.LinqFilterData`4.GetData(`1,System.Int32,System.Int32,System.String)">
+            <summary>
+            取得排序且分頁的資料
+            </summary>
+            <param name="FilterData">要篩選資料的條件</param>
+            <param name="startRowIndex">起始位置</param>
+            <param name="maximumRows">要取得的資料筆數</param>
+            <param name="SortExpression">排序的欄位</param>
+            <returns>經過排序且分頁的資料</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.LinqFilterData`4.GetData(System.Int32,System.Int32,System.String)">
+            <summary>
+            取得排序且分頁的資料
+            </summary>
+            <param name="startRowIndex">起始位置</param>
+            <param name="maximumRows">要取得的資料筆數</param>
+            <param name="SortExpression">排序的欄位</param>
+            <returns>經過排序且分頁的資料</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.LinqFilterData`4.LinqWhere(`1,System.Linq.IQueryable{`0})">
+            <summary>
+            自訂的Where篩選方式
+            </summary>
+            <param name="FilterData">要篩選資料的條件</param>
+            <param name="query">查詢的Query</param>
+            <returns></returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.LinqFilterData`4.LinqSelect(System.Linq.IQueryable{`0})">
+            <summary>
+            自訂Select的語法
+            </summary>
+            <param name="query">待修改的Query</param>
+            <returns>自訂的Select語法</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.LinqFilterData`4.GetCustomQuery(`1,System.Linq.IQueryable{`0})">
+            <summary>
+            取得自訂的Query
+            </summary>
+            <param name="FilterData">待修改的Query</param>
+            <param name="query">查詢的Query</param>
+            <returns>篩選Select及Where的Query</returns>
+        </member>
+        <member name="T:Tw.Com.Hamastar.LinqToQuery.DataPagerQueryable">
+            <summary>
+            將Queryable實作分頁的方法
+            </summary>
+        </member>
+        <member name="T:Tw.Com.Hamastar.LinqToQuery.IDataPager">
+            <summary>
+            將Queryable實作分頁的方法
+            </summary>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.IDataPager.GetPagerQuery``1(System.Linq.IQueryable{``0},System.Int32,System.Int32)">
+            <summary>
+            取得分頁的查詢Query
+            </summary>
+            <param name="query">要加入分頁的Query</param>
+            <param name="startRowIndex">起始位置</param>
+            <param name="maximumRows">>要取得的資料筆數</param>
+            <returns>加上分頁的Query</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.IDataPager.CheckSortExpression``1(System.Linq.IQueryable{``0},System.String)">
+            <summary>
+            取得排序Query(若為空值，預設使用主鍵由大至小排序)
+            </summary>
+            <param name="query">要加入排序的Query</param>
+            <param name="SortExpression">排序的語法</param>
+            <returns>加上排序的Query</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.DataPagerQueryable.GetSortQuery``1(System.Linq.IQueryable{``0},System.String)">
+            <summary>
+            取得Sort的Query
+            </summary>
+            <param name="query">要轉為SQL的Query</param>
+            <param name="SortExpression">要排序的欄位</param>
+            <returns>加入OrderBy的Query</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.DataPagerQueryable.GetPagerQuery``1(System.Linq.IQueryable{``0},System.Int32,System.Int32)">
+            <summary>
+            取得分頁的查詢Query
+            </summary>
+            <param name="query">要加入分頁的Query</param>
+            <param name="startRowIndex">起始位置</param>
+            <param name="maximumRows">>要取得的資料筆數</param>
+            <returns>加上分頁的Query</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.DataPagerQueryable.GetPrimaryOrFirstKey``1(System.Linq.IQueryable{``0})">
+            <summary>
+            由query的上層找Mapping的Class並取得主鍵名稱或第一個欄位的名稱
+            </summary>
+            <param name="query">要反查的query</param>
+            <returns>主鍵或第一個欄位的名稱</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.DataPagerQueryable.CheckSortExpression``1(System.Linq.IQueryable{``0},System.String)">
+            <summary>
+            取得排序Query(若為空值，預設使用主鍵由大至小排序)
+            </summary>
+            <param name="query">要加入排序的Query</param>
+            <param name="SortExpression">排序的語法</param>
+            <returns>加上排序的Query</returns>
+        </member>
+        <member name="T:Tw.Com.Hamastar.LinqToQuery.QueryableConvertMethod">
+            <summary>
+            轉換Queryable成為不同類型的查詢條件
+            </summary>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.QueryableConvertMethod.#ctor">
+            <summary>
+            轉換Queryable成為不同類型的查詢條件
+            </summary>
+        </member>
+        <member name="F:Tw.Com.Hamastar.LinqToQuery.QueryableConvertMethod.DataPagerQueryable">
+            <summary>
+            將Queryable實作分頁的方法
+            </summary>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.QueryableConvertMethod.GetFilterQuery``2(``0,System.Linq.IQueryable{``1},System.Func{``0,System.Linq.IQueryable{``1},System.Linq.IQueryable{``1}})">
+            <summary>
+            將Query實作Where條件
+            </summary>
+            <typeparam name="TFilter">要篩選資料的資料表類別(ORM)</typeparam>
+            <typeparam name="TQuery">查詢的Query資料表類別(ORM)</typeparam>
+            <param name="FilterData">要篩選資料的條件</param>
+            <param name="Query">查詢的Query</param>
+            <param name="FilterMethod">實作Where條件的方法</param>
+            <returns>實作Where條件的Query</returns>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.QueryableConvertMethod.GetPagerAndOrderList``1(System.Linq.IQueryable{``0},System.Int32,System.Int32,System.String)">
+            <summary>
+            取得分頁及排序的List資料
+            </summary>
+            <typeparam name="TQuery">要轉換為List的Query資料表類別(ORM)</typeparam>
+            <param name="Query">要轉換為List的Query</param>
+            <param name="startRowIndex">分頁的起始資料列索引</param>
+            <param name="maximumRows">分頁要取得的資料列數目</param>
+            <param name="SortExpression">要排序的資料欄位</param>
+            <returns>實作分頁及排序後的List</returns>
+        </member>
+        <member name="T:Tw.Com.Hamastar.LinqToQuery.SqlBulk.SqlBulkMethod">
+            <summary>
+            SqlBulk的方法
+            </summary>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.SqlBulk.SqlBulkMethod.Insert``1(System.Collections.Generic.IEnumerable{``0},System.String,System.Data.Linq.DataContext)">
+            <summary>
+            籍由SqlBulk新增資料
+            </summary>
+            <typeparam name="TSource">要新增的資料類別</typeparam>
+            <param name="source">要新增的資料</param>
+            <param name="tableName">資料表名稱</param>
+            <param name="databaseContext">DBML的DataContext</param>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.SqlBulk.SqlBulkMethod.ColumnMapping(System.Data.SqlClient.SqlBulkCopy,System.Data.DataTable)">
+            <summary>
+            將來源與目的端的資料欄位做對應欄位的動作
+            </summary>
+            <param name="bulkCopy">目的端的SqlBulkCopy物件</param>
+            <param name="dataTable">來源資料</param>
+        </member>
+        <member name="T:Tw.Com.Hamastar.LinqToQuery.UnitTestMethod.AddTestData`2">
+            <summary>
+            單元測試操作測試資料的方法
+            </summary>
+        </member>
+        <member name="M:Tw.Com.Hamastar.LinqToQuery.UnitTestMethod.AddTestData`2.action(System.Collections.Generic.IEnumerable{`0},System.Nullable{System.Boolean})">
+            <summary>
+            開始新增測試用資料
+            </summary>
+            <param name="TestSampleData">測試用的資料</param>
+            <param name="IsInit">是否需要初使化，若無指定則由私有變數_IsInit决定初使化的動作</param>
+        </member>
+    </members>
+</doc>

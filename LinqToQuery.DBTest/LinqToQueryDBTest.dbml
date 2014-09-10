@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="LinqToQuery" Class="LinqToQueryDBTestDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(localdb)\v11.0;Initial Catalog=LinqToQuery;Integrated Security=True" SettingsObjectName="Tw.Hamastar.Com.LinqToQuery.DBTest.Properties.Settings" SettingsPropertyName="LinqToQueryConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.SqlBulkTest" Member="SqlBulkTest">
+    <Type Name="SqlBulkTest">
+      <Column Name="SN" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="A1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="A2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="A3" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

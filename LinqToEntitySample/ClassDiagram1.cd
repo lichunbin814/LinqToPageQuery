@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LinqToEntitySample.DAL.CustomersQueryAbleExtention" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>DAL\CustomersQueryAbleExtention.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LinqToEntitySample.DAL.AutoGenerateExpression" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>DAL\AutoGenerateExpression.cs</FileName>
+      <NewMemberFileName>DAL\CustomersQueryAbleExtention.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="微軟正黑體" Size="9" />
+</ClassDiagram>
